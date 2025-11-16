@@ -15,16 +15,82 @@ function AddArticle() {
   };
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h2>Add Article</h2>
-      <form onSubmit={handleSubmit}>
-        <input name="title" placeholder="Title" onChange={handleChange} /><br />
-        <textarea name="content" placeholder="Content" onChange={handleChange}></textarea><br />
-        <input name="category" placeholder="Category" onChange={handleChange} /><br />
-        <button type="submit">Publish</button>
+  <div style={{ padding: "40px", display: "flex", justifyContent: "center" }}>
+    <div
+      style={{
+        width: "450px",
+        border: "2px solid #333",
+        borderRadius: "10px",
+        padding: "30px",
+      }}
+    >
+      <h2 style={{ fontSize: "26px", marginBottom: "20px" }}>
+        New Article
+      </h2>
+
+      <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "15px" }}>
+        
+        {/* Title */}
+        <input
+          name="title"
+          placeholder="Article Title"
+          onChange={handleChange}
+          style={{
+            padding: "10px",
+            border: "2px solid #333",
+            borderRadius: "6px",
+            fontSize: "16px",
+          }}
+        />
+
+        {/* Category */}
+        <input
+          name="category"
+          placeholder="Blog Category"
+          onChange={handleChange}
+          style={{
+            padding: "10px",
+            border: "2px solid #333",
+            borderRadius: "6px",
+            fontSize: "16px",
+          }}
+        />
+
+        {/* Content */}
+        <textarea
+          name="content"
+          placeholder="Content"
+          onChange={handleChange}
+          rows={8}
+          style={{
+            padding: "10px",
+            border: "2px solid #333",
+            borderRadius: "6px",
+            fontSize: "16px",
+          }}
+        />
+
+        {/* Button */}
+        <button
+          type="submit"
+          style={{
+            marginTop: "10px",
+            width: "120px",
+            padding: "10px",
+            fontSize: "16px",
+            border: "2px solid #333",
+            borderRadius: "6px",
+            background: "white",
+            cursor: "pointer",
+          }}
+        >
+          Publish
+        </button>
       </form>
     </div>
-  );
+  </div>
+);
+
 }
 
 export default AddArticle;
